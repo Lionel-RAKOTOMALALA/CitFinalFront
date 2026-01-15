@@ -10,9 +10,7 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
-      <div className="relative">
-        <SearchBar />
-      </div>
+
       <FeaturedProperties />
       <FeaturedExperiences />
       <PremiumVideoSection />
