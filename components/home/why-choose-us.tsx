@@ -41,11 +41,15 @@ export function WhyChooseUs() {
     <section className="py-12 md:py-20 md:pb-20">
       <div className="container px-4">
         <div className="flex flex-col justify-center items-center mb-8 md:mb-12">
-          <Badge variant="outline" className="mb-4">
+          <span className="inline-flex items-center mb-4 gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
+            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
             Pourquoi nous choisir
-          </Badge>
+          </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-center text-[#1C252E] dark:text-white leading-tight">
-            Votre partenaire de confiance
+            Votre partenaire&nbsp;
+            <span className="mt-2 bg-gradient-to-r from-primary via-primary-600 to-primary-500 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+              de confiance
+            </span>
           </h2>
           <p className="text-[#637381] max-w-2xl mt-4 text-center text-sm md:text-base px-4">
             Nous mettons tout en œuvre pour rendre votre expérience unique et
