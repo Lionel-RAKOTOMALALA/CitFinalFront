@@ -8,6 +8,12 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge";
 import { Slider } from "@/components/ui/slider";
 import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const hotels = [
   {
@@ -98,6 +104,7 @@ export default function HotelsPage() {
   };
 
   return (
+    <TooltipProvider>
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="py-12 md:py-20 bg-background">
@@ -245,14 +252,28 @@ export default function HotelsPage() {
                   <CardContent className="p-4 pt-0 pb-2">
                     <div className="flex flex-wrap gap-3">
                       {hotel.amenities.slice(0, 4).map((amenity) => (
-                        <div key={amenity} className="text-muted-foreground/60">
-                          {amenityIcons[amenity]}
-                        </div>
+                        <Tooltip key={amenity}>
+                          <TooltipTrigger asChild>
+                            <div className="text-muted-foreground/60 cursor-help">
+                              {amenityIcons[amenity]}
+                            </div>
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>{amenity}</p>
+                          </TooltipContent>
+                        </Tooltip>
                       ))}
                       {hotel.amenities.length > 4 && (
-                        <span className="text-xs text-muted-foreground/60 font-medium">
-                          +{hotel.amenities.length - 4}
-                        </span>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <span className="text-xs text-muted-foreground/60 font-medium cursor-help">
+                              +{hotel.amenities.length - 4}
+                            </span>
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>{hotel.amenities.slice(4).join(', ')}</p>
+                          </TooltipContent>
+                        </Tooltip>
                       )}
                     </div>
                   </CardContent>
@@ -284,5 +305,6 @@ export default function HotelsPage() {
         </div>
       </div>
     </div>
+    </TooltipProvider>
   );
 }
