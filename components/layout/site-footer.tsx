@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-muted">
+    <footer className="bg-background">
       <div className="container py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
