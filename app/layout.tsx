@@ -1,13 +1,11 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { ClerkProvider } from '@clerk/nextjs';
-
 import { cn } from '@/lib/utils';
-import { SiteHeader } from '@/components/layout/site-header';
-import { SiteFooter } from '@/components/layout/site-footer';
 import { ThemeProvider } from '@/components/theme-provider';
 import { TRPCProvider } from '@/components/providers/trpc-provider';
+import { AuthProvider } from '@/lib/auth-context';
+import { ConditionalLayout } from '@/components/layout/conditional-layout';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,11 +28,7 @@ export default function RootLayout({
         inter.className,
         "min-h-screen antialiased"
       )}>
-        <ClerkProvider
-          appearance={{
-            baseTheme: undefined
-          }}
-        >
+        <AuthProvider>
           <TRPCProvider>
             <ThemeProvider
               attribute="class"
@@ -42,14 +36,10 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange
             >
-              <div className="relative flex min-h-screen flex-col">
-                <SiteHeader />
-                <main className="flex-1">{children}</main>
-                <SiteFooter />
-              </div>
+              <ConditionalLayout>{children}</ConditionalLayout>
             </ThemeProvider>
           </TRPCProvider>
-        </ClerkProvider>
+        </AuthProvider>
       </body>
     </html>
   );

@@ -3,14 +3,15 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Search, User, MapPin, Menu, Sparkles } from "lucide-react";
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { Search, User, Sparkles, LogOut } from "lucide-react";
+import { useAuth } from "@/lib/auth-context";
 
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
 import { MobileNav } from "@/components/layout/mobile-nav";
 
 export function SiteHeader() {
+  const { user, isSignedIn, logout } = useAuth();
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
@@ -114,7 +115,7 @@ export function SiteHeader() {
               <span className="sr-only">Rechercher</span>
             </Button>
 
-            <SignedOut>
+            {!isSignedIn ? (
               <Link href="/sign-in">
                 <Button
                   variant="ghost"
@@ -130,14 +131,28 @@ export function SiteHeader() {
                   <span className="hidden md:inline-block">Connexion</span>
                 </Button>
               </Link>
-            </SignedOut>
-
-            <SignedIn>
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-600 rounded-full blur-md opacity-40 animate-pulse" />
-                <UserButton afterSignOutUrl="/" />
+            ) : (
+              <div className="flex items-center space-x-2">
+                <span className={`hidden md:inline-block text-sm font-medium ${
+                  isHomePage && !isScrolled ? "text-white" : "text-gray-700 dark:text-gray-300"
+                }`}>
+                  {user?.name}
+                </span>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={logout}
+                  title="Se déconnecter"
+                  className={`hover:bg-red-500/20 transition-colors ${
+                    isHomePage && !isScrolled
+                      ? "text-white hover:text-red-300"
+                      : "text-gray-700 dark:text-gray-300 hover:text-red-500"
+                  }`}
+                >
+                  <LogOut className="h-5 w-5" />
+                </Button>
               </div>
-            </SignedIn>
+            )}
 
             <Button className="hidden md:inline-flex relative group overflow-hidden bg-gradient-to-r from-orange-600 via-amber-600 to-yellow-600 hover:from-orange-500 hover:via-amber-500 hover:to-yellow-500 dark:from-orange-700 dark:via-amber-700 dark:to-yellow-700 dark:hover:from-orange-600 dark:hover:via-amber-600 dark:hover:to-yellow-600 text-white font-semibold border-0 shadow-lg shadow-orange-500/50 dark:shadow-orange-500/40 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/60 dark:hover:shadow-amber-500/50 hover:scale-105">
               <span className="relative z-10 flex items-center gap-2">
