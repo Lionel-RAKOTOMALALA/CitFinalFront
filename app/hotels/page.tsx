@@ -110,13 +110,13 @@ export default function HotelsPage() {
       <section className="py-12 md:py-20 bg-background">
         <div className="container px-4">
           <div className="flex flex-col justify-center items-center mb-8 md:mb-12">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-center text-[#1C252E] dark:text-white leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-center text-heading leading-tight">
               Trouvez Votre &nbsp;
               <span className="mt-2 bg-gradient-to-r from-primary via-primary-600 to-primary-500 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
                 Hôtel Parfait
               </span>
             </h1>
-            <p className="text-[#637381] max-w-2xl mt-4 text-center text-sm md:text-base px-4">
+            <p className="text-subtle max-w-2xl mt-4 text-center text-sm md:text-base px-4">
               Découvrez notre sélection d'hôtels de luxe dans la région Sud
             </p>
           </div>
@@ -127,7 +127,7 @@ export default function HotelsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Filters Sidebar */}
           <div className="lg:col-span-1">
-            <Card className="sticky top-[80px] border-none rounded-2xl shadow-[0_0_2px_0_rgba(145,158,171,0.2),0_12px_24px_-4px_rgba(145,158,171,0.12)] dark:shadow-none">
+            <Card className="sticky top-[80px] rounded-2xl shadow-card border border-border/40 bg-card">
               <CardHeader className="p-4 pb-2">
                 <h3 className="text-base md:text-lg font-semibold flex items-center gap-2">
                   <Filter className="h-5 w-5" />
@@ -198,10 +198,10 @@ export default function HotelsPage() {
           {/* Hotels Grid */}
           <div className="lg:col-span-3">
             <div className="flex justify-between items-center mb-6 md:mb-8">
-              <p className="text-[#637381] text-sm md:text-base">
+              <p className="text-subtle text-sm md:text-base">
                 {hotels.length} hôtels trouvés
               </p>
-              <select className="border rounded-md px-3 py-2 text-sm">
+              <select className="border border-border bg-background text-foreground rounded-md px-3 py-2 text-sm">
                 <option>Trier par prix</option>
                 <option>Trier par note</option>
                 <option>Trier par nom</option>
@@ -212,9 +212,7 @@ export default function HotelsPage() {
               {hotels.map((hotel) => (
                 <Card
                   key={hotel.id}
-                  className="group w-full sm:w-[270px] border-none overflow-hidden rounded-2xl
-                   shadow-[0_0_2px_0_rgba(145,158,171,0.2),0_12px_24px_-4px_rgba(145,158,171,0.12)]
-                   dark:shadow-none"
+                  className="group w-full sm:w-[270px] border border-border/40 overflow-hidden rounded-2xl shadow-card bg-card"
                 >
                   <div className="relative overflow-hidden w-full aspect-square">
                     <img

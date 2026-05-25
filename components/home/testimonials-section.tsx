@@ -49,14 +49,14 @@ export function TestimonialsSection() {
             </span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1C252E] dark:text-white leading-[1.1]">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-heading leading-[1.1]">
             Ce que disent
             <span className=" block mt-1 pb-3 bg-gradient-to-r from-primary via-primary-600 to-primary-600 bg-clip-text text-transparent">
               nos clients
             </span>
           </h2>
 
-          <p className="text-[#637381] dark:text-gray-400 text-base leading-relaxed">
+          <p className="text-subtle text-base leading-relaxed">
             Découvrez les expériences de voyageurs qui ont fait confiance à nos services premium
           </p>
         </div>
@@ -71,7 +71,7 @@ export function TestimonialsSection() {
                 animationDelay: `${index * 100}ms`,
               }}
             >
-              <div className="relative bg-background border border-border/40 dark:border-none rounded-2xl p-5 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 h-full dark:bg-[#101826] overflow-hidden group-hover:-translate-y-1">
+              <div className="card-elevated p-5 h-full overflow-hidden group-hover:-translate-y-1">
                 {/* Gradient background */}
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${testimonial.gradient} opacity-0 transition-opacity duration-500`}
@@ -101,7 +101,7 @@ export function TestimonialsSection() {
                   </div>
 
                   {/* Testimonial text */}
-                  <p className="text-[#637381] dark:text-gray-400 text-sm leading-relaxed">
+                  <p className="text-subtle text-sm leading-relaxed">
                     "{testimonial.text}"
                   </p>
 
@@ -114,10 +114,10 @@ export function TestimonialsSection() {
                         className="w-10 h-10 rounded-full object-cover ring-2 ring-primary/10 group-hover:ring-primary/30 transition-all duration-300"
                       />
                       <div>
-                        <p className="font-bold text-sm text-[#1C252E] dark:text-white">
+                        <p className="font-bold text-sm text-heading">
                           {testimonial.name}
                         </p>
-                        <p className="text-xs text-[#637381] dark:text-gray-400">
+                        <p className="text-xs text-subtle">
                           {testimonial.location}
                         </p>
                       </div>

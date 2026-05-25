@@ -23,14 +23,14 @@ export function FeaturedExperiences() {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1C252E] dark:text-white leading-[1.1]">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-heading leading-[1.1]">
               Explorez le Sud
               <span className="block mt-2 bg-gradient-to-r from-primary via-primary-600 to-primary-600 bg-clip-text text-transparent">
                 à votre rythme
               </span>
             </h1>
 
-            <p className="text-[#637381] dark:text-gray-400 text-base md:text-lg leading-relaxed max-w-lg">
+            <p className="text-subtle text-base md:text-lg leading-relaxed max-w-lg">
               Trouvez votre moyen de transport idéal et découvrez les activités
               incontournables pour un séjour inoubliable.
             </p>
@@ -38,36 +38,36 @@ export function FeaturedExperiences() {
             {/* Activités */}
             <div className="space-y-4 pt-2">
               <div className="flex items-center gap-4">
-                <Car className="w-5 h-5 text-gray-900 dark:text-white" />
+                <Car className="w-5 h-5 text-heading" />
                 <div>
-                  <p className="font-medium text-[#1C252E] dark:text-white">
+                  <p className="font-medium text-heading">
                     Location de véhicules
                   </p>
-                  <p className="text-sm text-[#637381] dark:text-gray-400">
+                  <p className="text-sm text-subtle">
                     À partir de 25€/jour
                   </p>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
-                <Waves className="w-5 h-5 text-gray-900 dark:text-white" />
+                <Waves className="w-5 h-5 text-heading" />
                 <div>
-                  <p className="font-medium text-[#1C252E] dark:text-white">
+                  <p className="font-medium text-heading">
                     Plages paradisiaques
                   </p>
-                  <p className="text-sm text-[#637381] dark:text-gray-400">
+                  <p className="text-sm text-subtle">
                     50+ plages à découvrir
                   </p>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
-                <Compass className="w-5 h-5 text-gray-900 dark:text-white" />
+                <Compass className="w-5 h-5 text-heading" />
                 <div>
-                  <p className="font-medium text-[#1C252E] dark:text-white">
+                  <p className="font-medium text-heading">
                     Excursions guidées
                   </p>
-                  <p className="text-sm text-[#637381] dark:text-gray-400">
+                  <p className="text-sm text-subtle">
                     Dès 15€
                   </p>
                 </div>

@@ -63,13 +63,13 @@ export function FeaturedProperties() {
     <section className="py-12 md:py-20 bg-background">
       <div className="container px-4">
         <div className="flex flex-col justify-center items-center mb-8 md:mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-center text-[#1C252E] dark:text-white leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-center text-heading leading-tight">
             Hôtels &nbsp;
             <span className="mt-2 bg-gradient-to-r from-primary via-primary-600 to-primary-500 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
               incontournables
             </span>
           </h2>
-          <p className="text-[#637381] max-w-2xl mt-4 text-center text-sm md:text-base px-4">
+          <p className="text-subtle max-w-2xl mt-4 text-center text-sm md:text-base px-4">
             Nos hôtels sélectionnés pour vous offrent le confort et
             l'emplacement idéals pour un séjour inoubliable dans le Sud !
           </p>
@@ -79,9 +79,7 @@ export function FeaturedProperties() {
           {featuredProperties.slice(0, 4).map((property) => (
             <Card
               key={property.id}
-              className="group w-full sm:w-[270px] border-none overflow-hidden rounded-2xl
-             shadow-[0_0_2px_0_rgba(145,158,171,0.2),0_12px_24px_-4px_rgba(145,158,171,0.12)]
-             dark:shadow-none"
+              className="group w-full sm:w-[270px] border border-border/40 overflow-hidden rounded-2xl shadow-card bg-card"
             >
               <div className="relative overflow-hidden w-full aspect-square">
                 <img

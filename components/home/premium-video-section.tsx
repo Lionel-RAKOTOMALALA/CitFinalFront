@@ -47,14 +47,14 @@ export function PremiumVideoSection() {
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1C252E] dark:text-white leading-[1.1]">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-heading leading-[1.1]">
               Découvrez en
               <span className="block mt-2 bg-gradient-to-r from-primary via-primary-600 to-primary-600 bg-clip-text text-transparent">
                 vidéo HD premium
               </span>
             </h2>
 
-            <p className="text-[#637381] dark:text-gray-400 text-base md:text-lg leading-relaxed max-w-lg">
+            <p className="text-subtle text-base md:text-lg leading-relaxed max-w-lg">
               Explorez 10 hôtels de luxe avec des visites complètes des chambres en moins de 10 minutes. Découvrez votre futur séjour avant de réserver.
             </p>
 
@@ -70,26 +70,26 @@ export function PremiumVideoSection() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border/50">
               <div>
-                <div className="text-2xl md:text-3xl font-bold text-[#1C252E] dark:text-white">
+                <div className="text-2xl md:text-3xl font-bold text-heading">
                   10+
                 </div>
-                <div className="text-sm text-[#637381] dark:text-gray-400 mt-1">
+                <div className="text-sm text-subtle mt-1">
                   Hôtels en vidéo
                 </div>
               </div>
               <div>
-                <div className="text-2xl md:text-3xl font-bold text-[#1C252E] dark:text-white">
+                <div className="text-2xl md:text-3xl font-bold text-heading">
                   HD
                 </div>
-                <div className="text-sm text-[#637381] dark:text-gray-400 mt-1">
+                <div className="text-sm text-subtle mt-1">
                   Qualité vidéo
                 </div>
               </div>
               <div>
-                <div className="text-2xl md:text-3xl font-bold text-[#1C252E] dark:text-white">
+                <div className="text-2xl md:text-3xl font-bold text-heading">
                   10min
                 </div>
-                <div className="text-sm text-[#637381] dark:text-gray-400 mt-1">
+                <div className="text-sm text-subtle mt-1">
                   Durée moyenne
                 </div>
               </div>
@@ -101,7 +101,7 @@ export function PremiumVideoSection() {
             <div className="grid grid-cols-1 gap-5 lg:gap-6">
               {/* Featured video */}
               <div className="group relative" style={{ animationDelay: '0ms' }}>
-                <div className="relative bg-background border border-border/40 dark:border-none rounded-2xl overflow-hidden hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 dark:bg-[#101826] group-hover:-translate-y-1">
+                <div className="card-elevated overflow-hidden group-hover:-translate-y-1">
                   {/* Gradient background */}
                   <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -164,7 +164,7 @@ export function PremiumVideoSection() {
                     className="group relative"
                     style={{ animationDelay: `${(index + 1) * 100}ms` }}
                   >
-                    <div className="relative bg-background border border-border/40 dark:border-none rounded-2xl overflow-hidden hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 dark:bg-[#101826] group-hover:-translate-y-1">
+                    <div className="card-elevated overflow-hidden group-hover:-translate-y-1">
                       {/* Gradient background */}
                       <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 

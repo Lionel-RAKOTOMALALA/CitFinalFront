@@ -45,10 +45,10 @@ export function SiteHeader() {
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         isHomePage && isScrolled
-          ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-xs shadow-sm shadow-orange-500/10"
+          ? "bg-background/95 backdrop-blur-xs shadow-sm shadow-orange-500/10 dark:shadow-primary/10"
           : isHomePage
           ? "bg-transparent border-white/10 dark:border-white/5"
-          : "bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800"
+          : "bg-background border-border"
       }`}
       style={{
         backdropFilter: isHomePage && isScrolled ? "blur(4px)" : "none",
@@ -58,7 +58,7 @@ export function SiteHeader() {
       <div
         className={`absolute inset-0 bg-gradient-to-r 
     from-white-600/5 via-amber-600/5 to-yellow-600/5 
-    dark:from-black/10 dark:via-gray-800/10 dark:to-black/10 
+    dark:from-primary/5 dark:via-amber-500/5 dark:to-primary/5 
     pointer-events-none transition-opacity duration-300 ${
       isHomePage && isScrolled ? "opacity-100" : "opacity-0"
     }`}
@@ -105,10 +105,10 @@ export function SiteHeader() {
               size="icon"
               className={`relative group hover:bg-orange-500/20 dark:hover:bg-orange-500/30 transition-colors ${
                 isHomePage && isScrolled
-                  ? "text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400"
+                  ? "text-muted-foreground hover:text-primary"
                   : isHomePage
-                  ? "text-white hover:text-orange-300 dark:hover:text-orange-200"
-                  : "text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400"
+                  ? "text-white hover:text-orange-300"
+                  : "text-muted-foreground hover:text-primary"
               }`}
             >
               <Search className="h-5 w-5 transition-transform group-hover:scale-110" />
@@ -121,10 +121,10 @@ export function SiteHeader() {
                   variant="ghost"
                   className={`hover:bg-amber-500/20 dark:hover:bg-amber-500/30 transition-colors ${
                     isHomePage && isScrolled
-                      ? "text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400"
+                      ? "text-muted-foreground hover:text-secondary"
                       : isHomePage
-                      ? "text-white hover:text-amber-300 dark:hover:text-amber-200"
-                      : "text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400"
+                      ? "text-white hover:text-amber-300"
+                      : "text-muted-foreground hover:text-secondary"
                   }`}
                 >
                   <User className="h-5 w-5 mr-2" />
@@ -134,7 +134,7 @@ export function SiteHeader() {
             ) : (
               <div className="flex items-center space-x-2">
                 <span className={`hidden md:inline-block text-sm font-medium ${
-                  isHomePage && !isScrolled ? "text-white" : "text-gray-700 dark:text-gray-300"
+                  isHomePage && !isScrolled ? "text-white" : "text-muted-foreground"
                 }`}>
                   {user?.name}
                 </span>
@@ -146,7 +146,7 @@ export function SiteHeader() {
                   className={`hover:bg-red-500/20 transition-colors ${
                     isHomePage && !isScrolled
                       ? "text-white hover:text-red-300"
-                      : "text-gray-700 dark:text-gray-300 hover:text-red-500"
+                      : "text-muted-foreground hover:text-destructive"
                   }`}
                 >
                   <LogOut className="h-5 w-5" />
@@ -212,12 +212,12 @@ function NavLink({
           isActive
             ? isHomePage && !isScrolled
               ? "text-white font-bold drop-shadow-lg"
-              : "text-gray-900 dark:text-gray-100 font-bold"
+              : "text-foreground font-bold"
             : isHomePage && isScrolled
-            ? "text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-gray-100"
+            ? "text-muted-foreground group-hover:text-foreground"
             : isHomePage
             ? "text-white/90 group-hover:text-white drop-shadow-md"
-            : "text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-gray-100"
+            : "text-muted-foreground group-hover:text-foreground"
         }`}
       >
         {children}

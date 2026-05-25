@@ -10,7 +10,11 @@ const config: Config = {
   theme: {
     container: {
       center: true,
-      padding: '2rem',
+      padding: {
+        DEFAULT: '1rem',
+        sm: '1.5rem',
+        lg: '2rem',
+      },
       screens: {
         '2xl': '1400px',
       },
@@ -50,6 +54,10 @@ const config: Config = {
           DEFAULT: 'hsl(var(--popover))',
           foreground: 'hsl(var(--popover-foreground))',
         },
+        heading: 'hsl(var(--heading))',
+        subtle: 'hsl(var(--subtle))',
+        surface: 'hsl(var(--surface))',
+        elevated: 'hsl(var(--elevated))',
         success: {
           DEFAULT: 'hsl(var(--success))',
           foreground: 'hsl(var(--success-foreground))',
@@ -71,7 +79,8 @@ const config: Config = {
         'hero-pattern': 'linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7))',
       },
       boxShadow: {
-        card: '0 8px 30px rgba(0, 0, 0, 0.08)',
+        card: 'var(--shadow-card)',
+        glow: 'var(--shadow-glow)',
       },
       keyframes: {
         'accordion-down': {

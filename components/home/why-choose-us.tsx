@@ -38,20 +38,20 @@ const benefits = [
 
 export function WhyChooseUs() {
   return (
-    <section className="py-12 md:py-20 md:pb-20">
+    <section className="py-12 md:py-20 md:pb-20 bg-background">
       <div className="max-w-7xl mx-auto px-6 sm:px-0 relative z-10">
         <div className="flex flex-col justify-center items-center mb-8 md:mb-12">
           <span className="inline-flex items-center mb-4 gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
             Pourquoi nous choisir
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-center text-[#1C252E] dark:text-white leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-center text-heading leading-tight">
             Votre partenaire&nbsp;
             <span className="mt-2 bg-gradient-to-r from-primary via-primary-600 to-primary-500 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
               de confiance
             </span>
           </h2>
-          <p className="text-[#637381] max-w-2xl mt-4 text-center text-sm md:text-base px-4">
+          <p className="text-subtle max-w-2xl mt-4 text-center text-sm md:text-base px-4">
             Nous mettons tout en œuvre pour rendre votre expérience unique et
             sans souci, de la réservation jusqu'à votre départ.
           </p>
@@ -63,7 +63,7 @@ export function WhyChooseUs() {
             return (
               <Card
                 key={index}
-                className="border-border/40 bg-[#F4F6F8] dark:bg-[#1F2937] transition-all duration-300"
+                className="border-border/40 bg-surface transition-all duration-300"
               >
                 <CardHeader>
                   <div className="flex items-start justify-between mb-3">
@@ -71,12 +71,12 @@ export function WhyChooseUs() {
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-[#1C252E] dark:text-white">
+                  <h3 className="text-xl font-semibold text-heading">
                     {benefit.title}
                   </h3>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-[#637381] text-sm leading-relaxed">
+                  <p className="text-subtle text-sm leading-relaxed">
                     {benefit.description}
                   </p>
                 </CardContent>

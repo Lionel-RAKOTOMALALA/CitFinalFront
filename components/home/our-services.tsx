@@ -65,14 +65,14 @@ export function OurServices() {
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1C252E] dark:text-white leading-[1.1]">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-heading leading-[1.1]">
               Tout pour votre
               <span className="block mt-2 bg-gradient-to-r from-primary via-primary-600 to-primary-600 bg-clip-text text-transparent">
                 séjour parfait
               </span>
             </h2>
 
-            <p className="text-[#637381] dark:text-gray-400 text-base md:text-lg leading-relaxed max-w-lg">
+            <p className="text-subtle text-base md:text-lg leading-relaxed max-w-lg">
               Découvrez notre sélection complète de services premium pour
               organiser votre séjour dans le Sud en toute simplicité et
               sérénité.
@@ -90,26 +90,26 @@ export function OurServices() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border/50">
               <div>
-                <div className="text-2xl md:text-3xl font-bold text-[#1C252E] dark:text-white">
+                <div className="text-2xl md:text-3xl font-bold text-heading">
                   380+
                 </div>
-                <div className="text-sm text-[#637381] dark:text-gray-400 mt-1">
+                <div className="text-sm text-subtle mt-1">
                   Options disponibles
                 </div>
               </div>
               <div>
-                <div className="text-2xl md:text-3xl font-bold text-[#1C252E] dark:text-white">
+                <div className="text-2xl md:text-3xl font-bold text-heading">
                   4.9
                 </div>
-                <div className="text-sm text-[#637381] dark:text-gray-400 mt-1">
+                <div className="text-sm text-subtle mt-1">
                   Note moyenne
                 </div>
               </div>
               <div>
-                <div className="text-2xl md:text-3xl font-bold text-[#1C252E] dark:text-white">
+                <div className="text-2xl md:text-3xl font-bold text-heading">
                   24/7
                 </div>
-                <div className="text-sm text-[#637381] dark:text-gray-400 mt-1">
+                <div className="text-sm text-subtle mt-1">
                   Support client
                 </div>
               </div>
@@ -130,7 +130,7 @@ export function OurServices() {
                       animationDelay: `${index * 100}ms`,
                     }}
                   >
-                    <div className="relative bg-background border border-border/40 dark:border-none rounded-2xl p-7 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 h-full dark:bg-[#101826] overflow-hidden group-hover:-translate-y-1">
+                    <div className="card-elevated p-7 h-full overflow-hidden group-hover:-translate-y-1">
                       {/* Gradient background */}
                       <div
                         className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
@@ -153,11 +153,11 @@ export function OurServices() {
 
                         {/* Content */}
                         <div className="space-y-2">
-                          <h3 className="text-xl font-bold text-[#1C252E] dark:text-white  transition-colors duration-300 flex items-center justify-between">
+                          <h3 className="text-xl font-bold text-heading  transition-colors duration-300 flex items-center justify-between">
                             {service.title}
                             <ArrowUpRight className="h-5 w-5 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300" />
                           </h3>
-                          <p className="text-sm text-[#637381] dark:text-gray-400 font-medium">
+                          <p className="text-sm text-subtle font-medium">
                             {service.count}
                           </p>
                         </div>
