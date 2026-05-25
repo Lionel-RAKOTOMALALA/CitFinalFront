@@ -39,7 +39,7 @@ export function TestimonialsSection() {
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container px-4 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-0 relative z-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-8 lg:mb-12 space-y-4">
           <div className="inline-block">

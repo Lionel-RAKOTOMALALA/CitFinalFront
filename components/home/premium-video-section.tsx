@@ -36,7 +36,7 @@ export function PremiumVideoSection() {
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container px-4 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-0 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left side - Text content */}
           <div className="lg:col-span-5 space-y-6">

@@ -12,6 +12,11 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'SouthBooking - Votre Plateforme de Réservation Premium',
   description: 'Réservez des hôtels, restaurants, voitures de location et attractions touristiques dans la région Sud.',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,   // Autorise le zoom utilisateur
+  },
 };
 
 // Force dynamic rendering
