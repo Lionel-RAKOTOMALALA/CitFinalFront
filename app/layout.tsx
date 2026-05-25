@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { TRPCProvider } from '@/components/providers/trpc-provider';
 import { AuthProvider } from '@/lib/auth-context';
 import { ConditionalLayout } from '@/components/layout/conditional-layout';
+import { InitialPageLoader } from '@/components/layout/initial-page-loader';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -40,6 +41,7 @@ export default function RootLayout({
               defaultTheme="system"
               enableSystem
             >
+              <InitialPageLoader />
               <ConditionalLayout>{children}</ConditionalLayout>
             </ThemeProvider>
           </TRPCProvider>
