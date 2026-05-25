@@ -79,31 +79,34 @@ export default function AttractionsPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-primary/10 to-secondary/10">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Attractions & Expériences
+      <section className="py-12 md:py-20 bg-background">
+        <div className="container px-4">
+          <div className="flex flex-col justify-center items-center mb-8 md:mb-12">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-center text-heading leading-tight">
+              Attractions &nbsp;
+              <span className="mt-2 bg-gradient-to-r from-primary via-primary-600 to-primary-500 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                Expériences
+              </span>
             </h1>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-subtle max-w-2xl mt-4 text-center text-sm md:text-base px-4">
               Découvrez des activités uniques et des expériences inoubliables dans la région Sud
             </p>
           </div>
         </div>
       </section>
 
-      <div className="container py-8">
+      <div className="container px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Filters Sidebar */}
           <div className="lg:col-span-1">
-            <Card className="sticky top-4">
-              <CardHeader>
-                <h3 className="text-lg font-semibold flex items-center gap-2">
+            <Card className="sticky top-[80px] rounded-2xl shadow-card border border-border/40 bg-card">
+              <CardHeader className="p-4 pb-2">
+                <h3 className="text-base md:text-lg font-semibold flex items-center gap-2">
                   <Filter className="h-5 w-5" />
                   Filtres
                 </h3>
               </CardHeader>
-              <CardContent className="space-y-6">
+              <CardContent className="p-4 pt-2 space-y-6">
                 {/* Search */}
                 <div>
                   <label className="text-sm font-medium mb-2 block">Rechercher</label>
@@ -177,92 +180,96 @@ export default function AttractionsPage() {
 
           {/* Attractions Grid */}
           <div className="lg:col-span-3">
-            <div className="flex justify-between items-center mb-6">
-              <p className="text-muted-foreground">
+            <div className="flex justify-between items-center mb-6 md:mb-8">
+              <p className="text-subtle text-sm md:text-base">
                 {attractions.length} expériences trouvées
               </p>
-              <select className="border rounded-md px-3 py-2">
+              <select className="border border-border bg-background text-foreground rounded-md px-3 py-2 text-sm">
                 <option>Trier par popularité</option>
                 <option>Trier par prix</option>
                 <option>Trier par note</option>
               </select>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex flex-wrap justify-center gap-6 md:gap-8">
               {attractions.map((attraction) => (
-                <Card key={attraction.id} className="property-card group overflow-hidden">
-                  <div className="relative overflow-hidden aspect-[4/3]">
+                <Card
+                  key={attraction.id}
+                  className="group w-full sm:w-[270px] border border-border/40 overflow-hidden rounded-2xl shadow-card bg-card"
+                >
+                  <div className="relative overflow-hidden w-full aspect-square">
                     <img
                       src={attraction.image}
                       alt={attraction.title}
-                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <Badge className="absolute top-3 left-3 bg-primary">
+                    <Badge
+                      variant="secondary"
+                      className="absolute top-3 left-3 bg-primary text-primary-foreground"
+                    >
                       {attraction.category}
                     </Badge>
-                    <Badge 
-                      variant="outline" 
-                      className={`absolute top-3 right-3 bg-background/80 backdrop-blur-sm ${
-                        attraction.difficulty === 'Facile' ? 'text-success' :
-                        attraction.difficulty === 'Modéré' ? 'text-warning' : 'text-destructive'
+                    <Badge
+                      variant="outline"
+                      className={`absolute top-3 right-3 bg-background/80 backdrop-blur-sm text-xs ${
+                        attraction.difficulty === "Facile"
+                          ? "text-success"
+                          : attraction.difficulty === "Modéré"
+                          ? "text-warning"
+                          : "text-destructive"
                       }`}
                     >
                       {attraction.difficulty}
                     </Badge>
                   </div>
-                  
+
                   <CardHeader className="p-4 pb-2">
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <h3 className="font-semibold text-lg line-clamp-2">{attraction.title}</h3>
-                        <p className="text-muted-foreground text-sm flex items-center gap-1">
-                          <MapPin className="h-4 w-4" />
-                          {attraction.location}
-                        </p>
+                    <Link href={`/attractions/${attraction.id}`}>
+                      <h3 className="font-semibold text-base md:text-lg line-clamp-2 hover:underline cursor-pointer">
+                        {attraction.title}
+                      </h3>
+                    </Link>
+                    <p className="text-muted-foreground text-sm flex items-center gap-1">
+                      <MapPin className="h-3.5 w-3.5 shrink-0" />
+                      {attraction.location}
+                    </p>
+                  </CardHeader>
+
+                  <CardContent className="p-4 pt-0 pb-2">
+                    <div className="grid grid-cols-1 gap-2 mb-3 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-1">
+                        <Clock className="h-4 w-4 shrink-0" />
+                        <span>{attraction.duration}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Users className="h-4 w-4 shrink-0" />
+                        <span className="line-clamp-1">{attraction.groupSize}</span>
                       </div>
                     </div>
-                  </CardHeader>
-                  
-                  <CardContent className="p-4 pt-0 pb-2">
-                    <div className="flex items-center gap-1 mb-3">
+                    <div className="flex flex-wrap gap-2">
+                      {attraction.includes.map((item, index) => (
+                        <Badge key={index} variant="secondary" className="text-xs">
+                          {item}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+
+                  <CardFooter
+                    className="p-4 pt-2 mt-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2"
+                    style={{ borderTop: "dashed 2px rgba(145 158 171 / 20%)" }}
+                  >
+                    <div>
+                      <span className="font-bold text-lg">{attraction.price}€</span>
+                      <span className="text-muted-foreground text-sm"> / personne</span>
+                    </div>
+                    <div className="flex items-center gap-1">
                       <Star className="h-4 w-4 fill-warning text-warning" />
                       <span className="font-medium">{attraction.rating}</span>
                       <span className="text-muted-foreground text-sm">
                         ({attraction.reviews} avis)
                       </span>
                     </div>
-                    
-                    <div className="grid grid-cols-2 gap-2 mb-3 text-sm">
-                      <div className="flex items-center gap-1">
-                        <Clock className="h-4 w-4 text-muted-foreground" />
-                        <span>{attraction.duration}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Users className="h-4 w-4 text-muted-foreground" />
-                        <span>{attraction.groupSize}</span>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <p className="text-sm font-medium">Inclus :</p>
-                      <div className="flex flex-wrap gap-1">
-                        {attraction.includes.map((item, index) => (
-                          <Badge key={index} variant="secondary" className="text-xs">
-                            {item}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  </CardContent>
-                  
-                  <CardFooter className="p-4 pt-2 flex justify-between items-center">
-                    <div>
-                      <span className="font-bold text-lg">{attraction.price}€</span>
-                      <span className="text-muted-foreground text-sm"> / personne</span>
-                    </div>
-                    <Button asChild size="sm">
-                      <Link href={`/attractions/${attraction.id}`}>Réserver</Link>
-                    </Button>
                   </CardFooter>
                 </Card>
               ))}
