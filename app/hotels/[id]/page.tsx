@@ -70,7 +70,7 @@ export default function HotelDetailPage() {
     <div className="min-h-screen bg-background">
       <div className="container py-8">
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-10 mb-8">
           <div>
             <h1 className="text-3xl md:text-4xl font-bold mb-2">{hotelData.name}</h1>
             <div className="flex items-center gap-4 text-muted-foreground">
@@ -232,7 +232,7 @@ export default function HotelDetailPage() {
 
           {/* Booking Sidebar */}
           <div className="lg:col-span-1">
-            <Card className="sticky top-4">
+            <Card className="sticky top-20">
               <CardHeader>
                 <CardTitle className="text-2xl">Réservation</CardTitle>
                 <div className="flex items-center gap-2">
