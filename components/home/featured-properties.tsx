@@ -13,45 +13,44 @@ import {
 const featuredProperties = [
   {
     id: 1,
-    name: "Oceanfront Paradise Resort",
-    location: "Coastal Bay",
+    name: "Andilana Beach Resort",
+    location: "Nosy Be",
     rating: 4.8,
-    reviews: 128,
-    price: 199,
-    image: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg",
+    reviews: 342,
+    price: 1250000,
+    image: "https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg",
     discount: true,
     availability: 3,
   },
   {
     id: 2,
-    name: "Tropical Haven Hotel & Spa",
-    location: "Palm Beach",
+    name: "Carlton Hotel",
+    location: "Antananarivo",
     rating: 4.7,
-    reviews: 96,
-    price: 159,
+    reviews: 512,
+    price: 850000,
     image: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
     discount: false,
     availability: 5,
   },
   {
     id: 3,
-    name: "Sunrise Beachfront Suites",
-    location: "Crystal Shores",
+    name: "Princesse Bora Lodge",
+    location: "Île Sainte-Marie",
     rating: 4.9,
     reviews: 203,
-    price: 259,
-    image:
-      "https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg",
+    price: 1550000,
+    image: "https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg",
     discount: true,
     availability: 1,
   },
   {
     id: 4,
-    name: "Urban Luxury Downtown Hotel",
-    location: "City Center",
+    name: "Le Relais de la Reine",
+    location: "Parc de l'Isalo",
     rating: 4.6,
     reviews: 168,
-    price: 179,
+    price: 650000,
     image: "https://images.pexels.com/photos/97083/pexels-photo-97083.jpeg",
     discount: false,
     availability: 8,
@@ -121,10 +120,10 @@ export function FeaturedProperties() {
                 style={{ borderTop: "dashed 2px rgba(145 158 171 / 20%)" }}
               >
                 <div>
-                  <span className="font-bold text-lg">${property.price}</span>
+                  <span className="font-bold text-lg">{property.price.toLocaleString()} Ar</span>
                   <span className="text-muted-foreground text-sm">
                     {" "}
-                    / night
+                    / nuit
                   </span>
                 </div>
 

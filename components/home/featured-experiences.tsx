@@ -44,7 +44,7 @@ export function FeaturedExperiences() {
                     Location de véhicules
                   </p>
                   <p className="text-sm text-subtle">
-                    À partir de 25€/jour
+                    À partir de 125 000 Ar/jour
                   </p>
                 </div>
               </div>
@@ -68,7 +68,7 @@ export function FeaturedExperiences() {
                     Excursions guidées
                   </p>
                   <p className="text-sm text-subtle">
-                    Dès 15€
+                    Dès 75 000 Ar
                   </p>
                 </div>
               </div>
