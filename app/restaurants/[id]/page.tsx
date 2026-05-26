@@ -11,34 +11,34 @@ import { Input } from "@/components/ui/input";
 
 const restaurantData = {
   id: "1",
-  name: "Le Jardin Tropical",
-  location: "Centre-ville, Région Sud",
-  cuisine: "Française",
-  rating: 4.6,
-  reviews: 89,
-  priceRange: "€€€",
+  name: "La Varangue",
+  location: "Antaninarenina, Antananarivo",
+  cuisine: "Malgache & Française",
+  rating: 4.8,
+  reviews: 245,
+  priceRange: "35 000 Ar",
   images: [
     "https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg",
     "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg",
     "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg",
     "https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg",
   ],
-  openingHours: { open: "18:00", close: "23:00" },
-  specialties: ["Bouillabaisse", "Coq au vin", "Tarte Tatin"],
-  features: ["Terrasse", "Parking", "Réservation recommandée", "Vue panoramique", "Accès handicapé"],
-  description: "Découvrez une expérience culinaire inoubliable au cœur de la ville. Notre chef étoilé prépare des plats traditionnels français avec une touche moderne, en utilisant uniquement des ingrédients locaux de saison. Profitez de notre magnifique terrasse pour un dîner romantique ou un repas d'affaires.",
+  openingHours: { open: "12:00", close: "22:00" },
+  specialties: ["Zébu braisé", "Foie gras de Madagascar", "Camaron flambé"],
+  features: ["Terrasse", "Jardin", "Collection d'antiquités", "Réservation recommandée", "Service voiturier"],
+  description: "Situé au cœur de la capitale, La Varangue est une véritable institution gastronomique. Dans un décor d'antiquités fascinant, le chef vous propose une cuisine raffinée mêlant les saveurs du terroir malgache et le savoir-faire français. Une escale incontournable pour les gourmets de passage à Antananarivo.",
   menus: [
     {
-      title: "Menu Découverte",
-      price: 65,
-      description: "Une introduction parfaite à notre cuisine en 3 services.",
-      items: ["Amuse-bouche", "Entrée au choix", "Plat principal au choix", "Dessert du moment"]
+      title: "Menu Terroir Malgache",
+      price: 175000,
+      description: "Découvrez les saveurs authentiques de l'île Rouge.",
+      items: ["Mise en bouche aux épices douces", "Dégustation de foie gras au poivre sauvage de Madagascar", "Tournedos de zébu sauce vanille", "Délice à la vanille et fruits exotiques"]
     },
     {
-      title: "Menu Dégustation",
-      price: 95,
-      description: "Un voyage gastronomique complet en 6 services.",
-      items: ["Amuse-bouche", "Deux entrées", "Poisson", "Viande", "Sélection de fromages", "Dessert"]
+      title: "Menu Dégustation de l'Océan Indien",
+      price: 225000,
+      description: "Un voyage iodé avec les meilleurs produits de nos côtes.",
+      items: ["Carpaccio d'espadon aux baies roses", "Camarons flambés au rhum Dzama", "Filet de capitaine, réduction de combava", "Trilogie de sorbets locaux"]
     }
   ]
 };
@@ -165,7 +165,7 @@ export default function RestaurantDetailPage() {
                           </ul>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold">{menu.price}€</div>
+                          <div className="text-2xl font-bold">{menu.price.toLocaleString()} Ar</div>
                         </div>
                       </div>
                     </CardContent>

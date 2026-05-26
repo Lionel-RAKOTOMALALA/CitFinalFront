@@ -19,60 +19,60 @@ import { cn } from "@/lib/utils";
 const restaurants = [
   {
     id: "1",
-    name: "Le Jardin Tropical",
-    location: "Centre-ville",
-    cuisine: "Française",
-    rating: 4.6,
-    reviews: 89,
-    priceRange: "€€€",
+    name: "La Varangue",
+    location: "Antaninarenina, Antananarivo",
+    cuisine: "Malgache & Française",
+    rating: 4.8,
+    reviews: 245,
+    priceRange: "35 000 Ar",
     image: "https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg",
-    openingHours: { open: "18:00", close: "23:00" },
-    specialties: ["Bouillabaisse", "Coq au vin", "Tarte Tatin"],
-    features: ["Terrasse", "Parking", "Réservation recommandée"],
+    openingHours: { open: "12:00", close: "22:00" },
+    specialties: ["Zébu braisé", "Foie gras de Madagascar", "Camaron flambé"],
+    features: ["Terrasse", "Jardin", "Collection d'antiquités", "Réservation recommandée"],
   },
   {
     id: "2",
-    name: "Ocean Breeze",
-    location: "Front de mer",
+    name: "Le Pily Pily",
+    location: "Andilana, Nosy Be",
     cuisine: "Fruits de mer",
-    rating: 4.8,
-    reviews: 156,
-    priceRange: "€€€€",
+    rating: 4.9,
+    reviews: 189,
+    priceRange: "85 000 Ar",
     image: "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg",
-    openingHours: { open: "12:00", close: "22:00" },
-    specialties: ["Plateau de fruits de mer", "Homard grillé", "Paella"],
-    features: ["Vue mer", "Terrasse", "Parking valet"],
+    openingHours: { open: "18:00", close: "23:00" },
+    specialties: ["Langouste grillée", "Carpaccio d'espadon", "Crabe de mangrove"],
+    features: ["Vue panoramique", "Sur un promontoire", "Coucher de soleil exceptionnel"],
   },
   {
     id: "3",
-    name: "La Petite Auberge",
-    location: "Quartier historique",
+    name: "Le Mad Zébu",
+    location: "Belo sur Tsiribihina",
     cuisine: "Traditionnelle",
-    rating: 4.4,
-    reviews: 67,
-    priceRange: "€€",
+    rating: 4.7,
+    reviews: 112,
+    priceRange: "15 000 Ar",
     image: "https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg",
-    openingHours: { open: "19:00", close: "22:30" },
-    specialties: ["Cassoulet", "Confit de canard", "Crème brûlée"],
-    features: ["Ambiance authentique", "Cheminée", "Groupes acceptés"],
+    openingHours: { open: "11:30", close: "21:00" },
+    specialties: ["Romazava", "Ravitoto", "Filet de zébu aux baies roses"],
+    features: ["Étape incontournable", "Produits locaux", "Ambiance conviviale"],
   },
   {
     id: "4",
-    name: "Fusion Moderne",
-    location: "Quartier des affaires",
+    name: "Kudéta",
+    location: "Anosy, Antananarivo",
     cuisine: "Fusion",
-    rating: 4.7,
-    reviews: 134,
-    priceRange: "€€€€",
+    rating: 4.6,
+    reviews: 156,
+    priceRange: "45 000 Ar",
     image: "https://images.pexels.com/photos/1126728/pexels-photo-1126728.jpeg",
     openingHours: { open: "18:30", close: "23:30" },
-    specialties: ["Sushi fusion", "Tataki de thon", "Desserts créatifs"],
-    features: ["Bar à cocktails", "Musique live", "Réservation obligatoire"],
+    specialties: ["Ceviche de tilapia", "Magret de canard au miel de litchi", "Tiramisu à la vanille de Mada"],
+    features: ["Lounge bar", "Musique live", "Cadre chic et branché"],
   },
 ];
 
 const cuisineTypes = [
-  "Française",
+  "Malgache & Française",
   "Fruits de mer",
   "Traditionnelle",
   "Fusion",
@@ -94,7 +94,7 @@ const sortOptions = [
   { value: "name", label: "Trier par nom" },
 ];
 
-const priceToNumber = (p: string) => p.length; // "€€€" → 3
+const priceToNumber = (p: string) => parseInt(p.replace(/[^0-9]/g, '')) || 0; // "35 000 Ar" → 35000
 
 function getOpenStatus(hours: { open: string; close: string }) {
   const now = new Date();
@@ -180,7 +180,7 @@ export default function RestaurantsPage() {
               </span>
             </h1>
             <p className="text-subtle max-w-2xl mt-4 text-center text-sm md:text-base px-4">
-              Savourez la gastronomie locale dans nos restaurants sélectionnés
+              Savourez la gastronomie locale de Madagascar dans nos restaurants sélectionnés
             </p>
           </div>
         </div>

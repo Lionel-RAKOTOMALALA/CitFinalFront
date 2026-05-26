@@ -40,7 +40,7 @@ const hotels = [
     location: "Coastal Bay",
     rating: 4.8,
     reviews: 128,
-    price: 199,
+    price: 995000,
     image: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg",
     amenities: ["WiFi", "Piscine", "Spa", "Restaurant"],
     availableRooms: 3,
@@ -52,7 +52,7 @@ const hotels = [
     location: "Palm Beach",
     rating: 4.7,
     reviews: 96,
-    price: 159,
+    price: 795000,
     image: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
     amenities: ["WiFi", "Piscine", "Spa"],
     availableRooms: 5,
@@ -64,7 +64,7 @@ const hotels = [
     location: "Crystal Shores",
     rating: 4.9,
     reviews: 203,
-    price: 259,
+    price: 1295000,
     image:
       "https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg",
     amenities: ["WiFi", "Piscine", "Spa", "Restaurant", "Parking"],
@@ -89,7 +89,7 @@ const hotels = [
     location: "Centre-ville",
     rating: 4.6,
     reviews: 168,
-    price: 179,
+    price: 895000,
     image: "https://images.pexels.com/photos/97083/pexels-photo-97083.jpeg",
     amenities: ["WiFi", "Restaurant", "Parking"],
     availableRooms: 8,
@@ -101,7 +101,7 @@ const hotels = [
     location: "Centre-ville",
     rating: 4.6,
     reviews: 168,
-    price: 179,
+    price: 895000,
     image: "https://images.pexels.com/photos/97083/pexels-photo-97083.jpeg",
     amenities: ["WiFi", "Restaurant", "Parking"],
     availableRooms: 8,
@@ -111,7 +111,7 @@ const hotels = [
 
 export default function HotelsPage() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [priceRange, setPriceRange] = useState([0, 500]);
+  const [priceRange, setPriceRange] = useState([0, 2000000]);
   const [selectedAmenities, setSelectedAmenities] = useState<string[]>([]);
   const router = useRouter();
 
@@ -174,13 +174,13 @@ export default function HotelsPage() {
                   {/* Price Range */}
                   <div>
                     <label className="text-sm font-medium mb-4 block">
-                      Prix par nuit: ${priceRange[0]} - ${priceRange[1]}
+                      Prix par nuit: {priceRange[0].toLocaleString()} Ar - {priceRange[1].toLocaleString()} Ar
                     </label>
                     <Slider
                       value={priceRange}
                       onValueChange={setPriceRange}
-                      max={500}
-                      step={10}
+                      max={2000000}
+                      step={50000}
                       className="w-full"
                     />
                   </div>
@@ -323,7 +323,7 @@ export default function HotelsPage() {
                     >
                       <div>
                         <span className="font-bold text-lg">
-                          ${hotel.price}
+                          {hotel.price.toLocaleString()} Ar
                         </span>
                         <span className="text-muted-foreground text-sm">
                           {" "}

@@ -13,70 +13,70 @@ const cars = [
   {
     id: '1',
     brand: 'Toyota',
-    model: 'Corolla',
-    type: 'Économique',
-    year: 2023,
-    seats: 5,
-    transmission: 'Automatique',
-    fuelType: 'Essence',
-    pricePerDay: 45,
+    model: 'Land Cruiser Prado',
+    type: 'SUV 4x4',
+    year: 2021,
+    seats: 7,
+    transmission: 'Manuelle',
+    fuelType: 'Diesel',
+    pricePerDay: 600000,
     image: 'https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg',
-    features: ['Climatisation', 'GPS', 'Bluetooth', 'USB'],
-    rating: 4.5,
-    reviews: 89,
+    features: ['Climatisation', 'Galerie de toit', 'Bluetooth', 'Roue de secours'],
+    rating: 4.9,
+    reviews: 215,
     available: true
   },
   {
     id: '2',
-    brand: 'BMW',
-    model: 'X3',
-    type: 'SUV',
-    year: 2023,
+    brand: 'Nissan',
+    model: 'Patrol',
+    type: 'SUV 4x4',
+    year: 2020,
     seats: 5,
     transmission: 'Automatique',
     fuelType: 'Diesel',
-    pricePerDay: 89,
+    pricePerDay: 675000,
     image: 'https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg',
-    features: ['Climatisation', 'GPS', 'Bluetooth', 'Cuir', 'Toit ouvrant'],
+    features: ['Climatisation', 'Treuil', 'Bluetooth', 'Réservoir sup.'],
     rating: 4.8,
     reviews: 156,
     available: true
   },
   {
     id: '3',
-    brand: 'Mercedes',
-    model: 'Classe A',
-    type: 'Compacte Premium',
+    brand: 'Renault',
+    model: 'Duster 4WD',
+    type: 'SUV Compact',
     year: 2023,
     seats: 5,
-    transmission: 'Automatique',
+    transmission: 'Manuelle',
     fuelType: 'Essence',
-    pricePerDay: 65,
+    pricePerDay: 325000,
     image: 'https://images.pexels.com/photos/1719648/pexels-photo-1719648.jpeg',
-    features: ['Climatisation', 'GPS', 'Bluetooth', 'Cuir', 'Caméra de recul'],
-    rating: 4.7,
-    reviews: 124,
+    features: ['Climatisation', 'Garde au sol élevée', 'Bluetooth', 'USB'],
+    rating: 4.6,
+    reviews: 98,
     available: true
   },
   {
     id: '4',
-    brand: 'Renault',
-    model: 'Clio',
-    type: 'Citadine',
+    brand: 'Hyundai',
+    model: 'H1 Staria',
+    type: 'Minibus',
     year: 2022,
-    seats: 5,
+    seats: 9,
     transmission: 'Manuelle',
-    fuelType: 'Essence',
-    pricePerDay: 35,
+    fuelType: 'Diesel',
+    pricePerDay: 475000,
     image: 'https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg',
-    features: ['Climatisation', 'Bluetooth', 'USB'],
-    rating: 4.3,
-    reviews: 67,
+    features: ['Climatisation bi-zone', 'Vaste coffre', 'Bluetooth'],
+    rating: 4.7,
+    reviews: 112,
     available: false
   }
 ];
 
-const carTypes = ['Économique', 'Compacte', 'SUV', 'Premium', 'Citadine'];
+const carTypes = ['SUV 4x4', 'SUV Compact', 'Minibus', 'Économique', 'Citadine'];
 const transmissionTypes = ['Automatique', 'Manuelle'];
 const fuelTypes = ['Essence', 'Diesel', 'Hybride', 'Électrique'];
 
@@ -99,7 +99,7 @@ export default function CarsPage() {
               </span>
             </h1>
             <p className="text-subtle max-w-2xl mt-4 text-center text-sm md:text-base px-4">
-              Trouvez la voiture parfaite pour vos déplacements dans la région Sud
+              Trouvez la voiture idéale pour affronter les pistes et routes de Madagascar
             </p>
           </div>
         </div>
@@ -296,7 +296,7 @@ export default function CarsPage() {
                     style={{ borderTop: "dashed 2px rgba(145 158 171 / 20%)" }}
                   >
                     <div>
-                      <span className="font-bold text-lg">{car.pricePerDay}€</span>
+                      <span className="font-bold text-lg">{car.pricePerDay.toLocaleString()} Ar</span>
                       <span className="text-muted-foreground text-sm"> / jour</span>
                     </div>
                     <div className="flex items-center gap-1">

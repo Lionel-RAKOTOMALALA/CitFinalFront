@@ -11,30 +11,30 @@ import { Input } from "@/components/ui/input";
 
 const attractionData = {
   id: '1',
-  title: 'Plongée avec Tuba dans les Récifs Coralliens',
-  location: 'Baie Corallienne, Région Sud',
-  duration: '3 heures',
-  groupSize: 'Petit groupe (max 8)',
-  price: 75,
+  title: 'Découverte des Lémuriens à Andasibe',
+  location: 'Parc National d\'Andasibe-Mantadia, Madagascar',
+  duration: 'Demi-journée (4-5 heures)',
+  groupSize: 'Petit groupe (max 6 personnes)',
+  price: 225000,
   images: [
-    'https://images.pexels.com/photos/1268837/pexels-photo-1268837.jpeg',
-    'https://images.pexels.com/photos/3046637/pexels-photo-3046637.jpeg',
+    'https://images.pexels.com/photos/34098/south-africa-hluhluwe-giraffes-pattern.jpg',
+    'https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg',
     'https://images.pexels.com/photos/847393/pexels-photo-847393.jpeg',
     'https://images.pexels.com/photos/1325125/pexels-photo-1325125.jpeg'
   ],
-  category: 'Aventure',
-  rating: 4.8,
-  reviews: 124,
+  category: 'Nature',
+  rating: 4.9,
+  reviews: 324,
   difficulty: 'Facile',
-  includes: ['Équipement complet de plongée', 'Guide certifié', 'Collation et boissons', 'Photos sous-marines numériques'],
-  description: "Explorez les fonds marins exceptionnels de la Baie Corallienne. Accompagné par nos guides experts, vous découvrirez une faune et une flore sous-marines colorées et préservées. Cette activité est idéale pour les débutants comme pour les amateurs éclairés. Une expérience inoubliable dans des eaux cristallines.",
+  includes: ['Guide naturaliste certifié', 'Droits d\'entrée du parc', 'Transfert depuis votre hôtel à Andasibe', 'Bouteille d\'eau'],
+  description: "Partez à la rencontre de la faune endémique de Madagascar dans la forêt tropicale d'Andasibe. Vous partirez à la recherche du plus grand lémurien de l'île, l'Indri Indri, célèbre pour son chant impressionnant qui résonne dans la forêt. Vous observerez également diverses espèces d'oiseaux, de caméléons et d'orchidées rares. Une immersion totale dans la riche biodiversité malgache.",
   itinerary: [
-    { time: "09:00", activity: "Rendez-vous au centre de plongée, briefing de sécurité et équipement" },
-    { time: "09:30", activity: "Départ en bateau vers le premier site corallien" },
-    { time: "10:00", activity: "Première session de plongée avec tuba (45 min)" },
-    { time: "11:00", activity: "Pause collation à bord et déplacement vers le second site" },
-    { time: "11:30", activity: "Deuxième session de plongée (45 min)" },
-    { time: "12:30", activity: "Retour au port, debriefing et fin de l'activité" }
+    { time: "07:30", activity: "Prise en charge à votre hôtel à Andasibe et transfert vers l'entrée du parc" },
+    { time: "08:00", activity: "Rencontre avec votre guide, briefing et début de la marche dans la forêt" },
+    { time: "09:00", activity: "Observation du chant de l'Indri Indri, le plus grand des lémuriens" },
+    { time: "10:30", activity: "Découverte de la flore endémique (orchidées, fougères arborescentes) et d'autres lémuriens" },
+    { time: "11:30", activity: "Fin de la visite du parc principal et pause rafraîchissement" },
+    { time: "12:00", activity: "Retour à votre hébergement" }
   ]
 };
 
@@ -227,7 +227,7 @@ export default function AttractionDetailPage() {
               <CardHeader>
                 <CardTitle className="text-2xl">Réserver</CardTitle>
                 <div className="flex items-center gap-2">
-                  <span className="text-3xl font-bold text-primary">{attractionData.price}€</span>
+                  <span className="text-3xl font-bold text-primary">{attractionData.price.toLocaleString()} Ar</span>
                   <span className="text-muted-foreground">/ personne</span>
                 </div>
               </CardHeader>
@@ -258,12 +258,12 @@ export default function AttractionDetailPage() {
                 
                 <div className="border-t pt-4">
                   <div className="flex justify-between mb-2 text-sm">
-                    <span>{attractionData.price}€ x {tickets} personnes</span>
-                    <span>{attractionData.price * parseInt(tickets || '0')}€</span>
+                    <span>{attractionData.price.toLocaleString()} Ar x {tickets} personnes</span>
+                    <span>{(attractionData.price * parseInt(tickets || '0')).toLocaleString()} Ar</span>
                   </div>
                   <div className="flex justify-between font-bold text-lg border-t pt-2 mt-2">
                     <span>Total</span>
-                    <span>{attractionData.price * parseInt(tickets || '0')}€</span>
+                    <span>{(attractionData.price * parseInt(tickets || '0')).toLocaleString()} Ar</span>
                   </div>
                 </div>
                 

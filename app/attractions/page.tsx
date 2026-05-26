@@ -12,63 +12,63 @@ import Link from "next/link";
 const attractions = [
   {
     id: '1',
-    title: 'Plongée avec Tuba dans les Récifs Coralliens',
-    location: 'Baie Corallienne',
-    duration: '3 heures',
-    groupSize: 'Petit groupe (max 8)',
-    price: 75,
-    image: 'https://images.pexels.com/photos/1268837/pexels-photo-1268837.jpeg',
-    category: 'Aventure',
-    rating: 4.8,
-    reviews: 124,
+    title: 'Découverte des Lémuriens à Andasibe',
+    location: 'Parc National d\'Andasibe-Mantadia',
+    duration: 'Demi-journée',
+    groupSize: 'Petit groupe (max 6)',
+    price: 225000,
+    image: 'https://images.pexels.com/photos/34098/south-africa-hluhluwe-giraffes-pattern.jpg',
+    category: 'Nature',
+    rating: 4.9,
+    reviews: 324,
     difficulty: 'Facile',
-    includes: ['Équipement', 'Guide', 'Collation']
+    includes: ['Guide du parc', 'Droits d\'entrée', 'Transport local']
   },
   {
     id: '2',
-    title: 'Cours de Cuisine Traditionnelle',
-    location: 'Quartier Historique',
-    duration: '4 heures',
-    groupSize: '6-10 personnes',
-    price: 95,
-    image: 'https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg',
-    category: 'Culture',
-    rating: 4.7,
-    reviews: 89,
-    difficulty: 'Tous niveaux',
-    includes: ['Ingrédients', 'Recettes', 'Dégustation']
+    title: 'Allée des Baobabs au Coucher du Soleil',
+    location: 'Morondava',
+    duration: '3 heures',
+    groupSize: 'Tous publics',
+    price: 125000,
+    image: 'https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg',
+    category: 'Découverte',
+    rating: 4.8,
+    reviews: 512,
+    difficulty: 'Facile',
+    includes: ['Transport aller-retour', 'Rafraîchissements', 'Arrêt photo']
   },
   {
     id: '3',
-    title: 'Tour en Catamaran au Coucher du Soleil',
-    location: 'Port de Marina',
-    duration: '2.5 heures',
-    groupSize: 'Jusqu\'à 12 personnes',
-    price: 120,
+    title: 'Excursion en Pirogue sur les Pangalanes',
+    location: 'Manakara / Tamatave',
+    duration: 'Journée complète',
+    groupSize: 'Jusqu\'à 8 personnes',
+    price: 325000,
     image: 'https://images.pexels.com/photos/163236/luxury-yacht-boat-speed-water-163236.jpeg',
-    category: 'Détente',
-    rating: 4.9,
-    reviews: 203,
-    difficulty: 'Facile',
-    includes: ['Boissons', 'Collations', 'Équipement photo']
+    category: 'Aventure',
+    rating: 4.7,
+    reviews: 189,
+    difficulty: 'Modéré',
+    includes: ['Piroguier', 'Déjeuner pique-nique', 'Visites de villages']
   },
   {
     id: '4',
-    title: 'Randonnée dans les Montagnes',
-    location: 'Parc National',
-    duration: '6 heures',
-    groupSize: 'Petit groupe (max 6)',
-    price: 85,
+    title: 'Trekking dans le Massif de l\'Isalo',
+    location: 'Parc National de l\'Isalo, Ranohira',
+    duration: '6-8 heures',
+    groupSize: 'Petit groupe (max 10)',
+    price: 275000,
     image: 'https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg',
-    category: 'Aventure',
-    rating: 4.6,
-    reviews: 156,
-    difficulty: 'Modéré',
-    includes: ['Guide expert', 'Déjeuner', 'Transport']
+    category: 'Randonnée',
+    rating: 4.8,
+    reviews: 276,
+    difficulty: 'Difficile',
+    includes: ['Guide agréé', 'Déjeuner', 'Taxes de parc']
   }
 ];
 
-const categories = ['Aventure', 'Culture', 'Détente', 'Gastronomie', 'Nature'];
+const categories = ['Aventure', 'Culture', 'Détente', 'Gastronomie', 'Nature', 'Découverte', 'Randonnée'];
 const difficulties = ['Facile', 'Modéré', 'Difficile'];
 
 export default function AttractionsPage() {
@@ -89,7 +89,7 @@ export default function AttractionsPage() {
               </span>
             </h1>
             <p className="text-subtle max-w-2xl mt-4 text-center text-sm md:text-base px-4">
-              Découvrez des activités uniques et des expériences inoubliables dans la région Sud
+              Découvrez des activités uniques et la beauté de Madagascar
             </p>
           </div>
         </div>
@@ -260,7 +260,7 @@ export default function AttractionsPage() {
                     style={{ borderTop: "dashed 2px rgba(145 158 171 / 20%)" }}
                   >
                     <div>
-                      <span className="font-bold text-lg">{attraction.price}€</span>
+                      <span className="font-bold text-lg">{attraction.price.toLocaleString()} Ar</span>
                       <span className="text-muted-foreground text-sm"> / personne</span>
                     </div>
                     <div className="flex items-center gap-1">

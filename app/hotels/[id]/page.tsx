@@ -12,49 +12,49 @@ import { Textarea } from "@/components/ui/textarea";
 
 const hotelData = {
   id: '1',
-  name: 'Oceanfront Paradise Resort',
-  location: 'Coastal Bay, Région Sud',
+  name: 'Andilana Beach Resort',
+  location: 'Nosy Be, Madagascar',
   rating: 4.8,
-  reviews: 128,
-  price: 199,
+  reviews: 342,
+  price: 1250000,
   images: [
+    'https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg',
     'https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg',
     'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg',
-    'https://images.pexels.com/photos/584399/pexels-photo-584399.jpeg',
-    'https://images.pexels.com/photos/1697076/pexels-photo-1697076.jpeg',
+    'https://images.pexels.com/photos/331107/pexels-photo-331107.jpeg',
   ],
   amenities: ['WiFi Gratuit', 'Piscine', 'Spa', 'Restaurant', 'Parking Gratuit', 'Climatisation'],
-  availableRooms: 3,
-  description: 'Découvrez le luxe absolu dans notre resort face à l\'océan. Avec des vues spectaculaires sur la mer, des équipements de classe mondiale et un service exceptionnel, votre séjour sera inoubliable.',
+  availableRooms: 5,
+  description: 'Découvrez le paradis à Nosy Be dans notre resort exceptionnel. Niché au cœur d\'un jardin tropical luxuriant bordant l\'une des plus belles plages de Madagascar, l\'Andilana Beach Resort vous offre un séjour inoubliable mêlant confort, authenticité malgache et paysages à couper le souffle.',
   features: [
-    'Vue sur l\'océan depuis toutes les chambres',
-    'Spa de luxe avec soins personnalisés',
-    'Restaurant gastronomique avec chef étoilé',
-    'Piscine à débordement face à la mer',
-    'Accès direct à la plage privée',
-    'Service de conciergerie 24h/24'
+    'Plage privée de sable blanc et eaux turquoises',
+    'Centre de plongée PADI sur place',
+    'Restaurant proposant des spécialités malgaches et fruits de mer',
+    'Excursions vers les îles avoisinantes (Nosy Iranja, Nosy Komba)',
+    'Jardin tropical avec lémuriens en liberté',
+    'Animation en soirée avec danses traditionnelles'
   ],
   rooms: [
     {
-      type: 'Chambre Standard',
-      price: 199,
+      type: 'Chambre Jardin Tropical',
+      price: 1250000,
       size: '35m²',
       occupancy: '2 adultes',
-      amenities: ['Vue mer', 'Balcon', 'WiFi', 'Climatisation']
+      amenities: ['Vue jardin', 'Balcon', 'WiFi', 'Climatisation']
     },
     {
-      type: 'Suite Junior',
-      price: 299,
-      size: '55m²',
-      occupancy: '2 adultes + 1 enfant',
-      amenities: ['Vue mer panoramique', 'Salon séparé', 'Balcon privé', 'Minibar']
+      type: 'Chambre Vue Océan',
+      price: 1600000,
+      size: '40m²',
+      occupancy: '2 adultes',
+      amenities: ['Vue mer', 'Balcon privé', 'WiFi', 'Minibar']
     },
     {
-      type: 'Suite Présidentielle',
-      price: 599,
-      size: '120m²',
+      type: 'Suite Présidentielle Baobab',
+      price: 3250000,
+      size: '100m²',
       occupancy: '4 adultes',
-      amenities: ['Terrasse privée', 'Jacuzzi', 'Service majordome', 'Cuisine équipée']
+      amenities: ['Terrasse privée', 'Jacuzzi', 'Service majordome', 'Salon spacieux']
     }
   ]
 };
@@ -173,7 +173,7 @@ export default function HotelDetailPage() {
                           </div>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold">{room.price}€</div>
+                          <div className="text-2xl font-bold">{room.price.toLocaleString()} Ar</div>
                           <div className="text-sm text-muted-foreground">par nuit</div>
                           <Button className="mt-2">Réserver</Button>
                         </div>
@@ -236,7 +236,7 @@ export default function HotelDetailPage() {
               <CardHeader>
                 <CardTitle className="text-2xl">Réservation</CardTitle>
                 <div className="flex items-center gap-2">
-                  <span className="text-3xl font-bold text-primary">{hotelData.price}€</span>
+                  <span className="text-3xl font-bold text-primary">{hotelData.price.toLocaleString()} Ar</span>
                   <span className="text-muted-foreground">/ nuit</span>
                 </div>
               </CardHeader>
@@ -277,15 +277,15 @@ export default function HotelDetailPage() {
                 <div className="border-t pt-4">
                   <div className="flex justify-between mb-2">
                     <span>Prix par nuit</span>
-                    <span>{hotelData.price}€</span>
+                    <span>{hotelData.price.toLocaleString()} Ar</span>
                   </div>
                   <div className="flex justify-between mb-2">
                     <span>Taxes et frais</span>
-                    <span>29€</span>
+                    <span>{(145000).toLocaleString()} Ar</span>
                   </div>
                   <div className="flex justify-between font-bold text-lg border-t pt-2">
                     <span>Total</span>
-                    <span>{hotelData.price + 29}€</span>
+                    <span>{(hotelData.price + 145000).toLocaleString()} Ar</span>
                   </div>
                 </div>
                 

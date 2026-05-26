@@ -12,30 +12,30 @@ import { Input } from "@/components/ui/input";
 const carData = {
   id: '1',
   brand: 'Toyota',
-  model: 'Corolla',
-  type: 'Économique',
-  year: 2023,
-  seats: 5,
-  transmission: 'Automatique',
-  fuelType: 'Hybride',
-  pricePerDay: 45,
+  model: 'Land Cruiser Prado',
+  type: 'SUV 4x4',
+  year: 2021,
+  seats: 7,
+  transmission: 'Manuelle',
+  fuelType: 'Diesel',
+  pricePerDay: 600000,
   images: [
     'https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg',
     'https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg',
     'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg',
     'https://images.pexels.com/photos/3354515/pexels-photo-3354515.jpeg'
   ],
-  features: ['Climatisation', 'GPS intégré', 'Bluetooth', 'Ports USB', 'Régulateur de vitesse', 'Caméra de recul', 'Apple CarPlay / Android Auto'],
-  rating: 4.5,
-  reviews: 89,
+  features: ['Climatisation performante', 'Galerie de toit', 'Radio/Bluetooth', 'Roue de secours et cric', 'Suspensions renforcées', 'Garde au sol élevée', 'Double réservoir'],
+  rating: 4.9,
+  reviews: 215,
   available: true,
-  description: "La Toyota Corolla est la voiture idéale pour vos déplacements en ville comme sur autoroute. Économique, fiable et très confortable, elle offre un espace généreux pour les passagers et les bagages. Profitez de ses équipements modernes et de sa motorisation hybride pour un trajet agréable, silencieux et respectueux de l'environnement.",
+  description: "Le Toyota Land Cruiser est le roi incontesté des pistes malgaches. Robuste, fiable et confortable, ce 4x4 est spécialement préparé pour affronter les routes nationales comme les pistes les plus difficiles (RN7, RN5...). Il vous garantit un voyage en toute sécurité à travers Madagascar, avec un espace généreux pour les passagers et l'équipement.",
   specs: {
-    engine: "1.8L Hybride",
-    power: "122 ch",
+    engine: "3.0L D-4D",
+    power: "173 ch",
     doors: "5 portes",
-    luggage: "2 grandes valises, 1 petite",
-    consumption: "4.5L / 100km"
+    luggage: "4 grandes valises",
+    consumption: "11L / 100km"
   }
 };
 
@@ -232,7 +232,7 @@ export default function CarDetailPage() {
               <CardHeader>
                 <CardTitle className="text-2xl">Location</CardTitle>
                 <div className="flex items-center gap-2">
-                  <span className="text-3xl font-bold text-primary">{carData.pricePerDay}€</span>
+                  <span className="text-3xl font-bold text-primary">{carData.pricePerDay.toLocaleString()} Ar</span>
                   <span className="text-muted-foreground">/ jour</span>
                 </div>
               </CardHeader>
@@ -246,9 +246,9 @@ export default function CarDetailPage() {
                       value={pickupLocation}
                       onChange={(e) => setPickupLocation(e.target.value)}
                     >
-                      <option value="Aéroport International">Aéroport International</option>
-                      <option value="Gare Centrale">Gare Centrale</option>
-                      <option value="Centre-ville">Agence Centre-ville</option>
+                      <option value="Aéroport d'Ivato (TNR)">Aéroport d'Ivato (TNR)</option>
+                      <option value="Antananarivo Centre">Antananarivo Centre</option>
+                      <option value="Nosy Be Fascene">Nosy Be Fascene</option>
                     </select>
                   </div>
                 </div>
@@ -275,7 +275,7 @@ export default function CarDetailPage() {
                 <div className="border-t pt-4">
                   <div className="flex justify-between mb-2 text-sm">
                     <span>Prix de base ({days} jours)</span>
-                    <span>{carData.pricePerDay * days}€</span>
+                    <span>{(carData.pricePerDay * days).toLocaleString()} Ar</span>
                   </div>
                   <div className="flex justify-between mb-2 text-sm">
                     <span>Assurance standard</span>
@@ -283,11 +283,11 @@ export default function CarDetailPage() {
                   </div>
                   <div className="flex justify-between mb-2 text-sm">
                     <span>Taxes (20%)</span>
-                    <span>{Math.round(carData.pricePerDay * days * 0.2)}€</span>
+                    <span>{(Math.round(carData.pricePerDay * days * 0.2)).toLocaleString()} Ar</span>
                   </div>
                   <div className="flex justify-between font-bold text-lg border-t pt-2 mt-2">
                     <span>Total</span>
-                    <span>{Math.round(carData.pricePerDay * days * 1.2)}€</span>
+                    <span>{(Math.round(carData.pricePerDay * days * 1.2)).toLocaleString()} Ar</span>
                   </div>
                 </div>
                 
